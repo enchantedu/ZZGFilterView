@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E9ED815EB06D191D5DD58A7A54C9136334C248A8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "CA9A45BFA67B12555938901D5F401C57F3ECB732" : 0,
+    "E9ED815EB06D191D5DD58A7A54C9136334C248A8" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "61B5564F-0728-41AD-9DDB-34521115E53A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "CA9A45BFA67B12555938901D5F401C57F3ECB732" : "ZZGFilterView\/ZZGFilterView\/",
+    "E9ED815EB06D191D5DD58A7A54C9136334C248A8" : "ZZGFilterView\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ZZGFilterView",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ZZGFilterView.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/enchantedu\/ZZGFilterView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CA9A45BFA67B12555938901D5F401C57F3ECB732"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:enchantedu\/ZZGFilterView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E9ED815EB06D191D5DD58A7A54C9136334C248A8"
+    }
+  ]
+}

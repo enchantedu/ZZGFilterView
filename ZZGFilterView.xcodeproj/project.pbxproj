@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49160F9F1D37756A000C5591 /* ZZGTwoTabsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49160F9E1D37756A000C5591 /* ZZGTwoTabsView.m */; };
 		492C90D71D34D75000A26773 /* ZZGFilterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C90D61D34D75000A26773 /* ZZGFilterButton.m */; };
 		492C90DA1D34D7BD00A26773 /* ZZGMainCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C90D91D34D7BD00A26773 /* ZZGMainCategoryView.m */; };
 		492C90DD1D34D7D300A26773 /* ZZGSubCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 492C90DC1D34D7D300A26773 /* ZZGSubCategoryView.m */; };
@@ -44,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		0B3C034A9607EC64FAA15E26 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		49160F9D1D37756A000C5591 /* ZZGTwoTabsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZGTwoTabsView.h; path = FilterView/ZZGTwoTabsView.h; sourceTree = "<group>"; };
+		49160F9E1D37756A000C5591 /* ZZGTwoTabsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZGTwoTabsView.m; path = FilterView/ZZGTwoTabsView.m; sourceTree = "<group>"; };
 		492C90D51D34D75000A26773 /* ZZGFilterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZGFilterButton.h; path = FilterView/ZZGFilterButton.h; sourceTree = "<group>"; };
 		492C90D61D34D75000A26773 /* ZZGFilterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZGFilterButton.m; path = FilterView/ZZGFilterButton.m; sourceTree = "<group>"; };
 		492C90D81D34D7BD00A26773 /* ZZGMainCategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZGMainCategoryView.h; path = FilterView/ZZGMainCategoryView.h; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				492C90DF1D34DB3000A26773 /* ZZGCategoryBtnView.m */,
 				492C90D51D34D75000A26773 /* ZZGFilterButton.h */,
 				492C90D61D34D75000A26773 /* ZZGFilterButton.m */,
+				49160F9D1D37756A000C5591 /* ZZGTwoTabsView.h */,
+				49160F9E1D37756A000C5591 /* ZZGTwoTabsView.m */,
 				492C90D81D34D7BD00A26773 /* ZZGMainCategoryView.h */,
 				492C90D91D34D7BD00A26773 /* ZZGMainCategoryView.m */,
 				492C90DB1D34D7D300A26773 /* ZZGSubCategoryView.h */,
@@ -394,6 +399,7 @@
 				492C90E31D3638A900A26773 /* ZZGFilterBackgroundView.m in Sources */,
 				492C90DD1D34D7D300A26773 /* ZZGSubCategoryView.m in Sources */,
 				498143DF1D33713500FF6A83 /* AppDelegate.m in Sources */,
+				49160F9F1D37756A000C5591 /* ZZGTwoTabsView.m in Sources */,
 				4981444E1D348B6300FF6A83 /* ZZGFilterView.m in Sources */,
 				492C90E61D363E9700A26773 /* ZZGFilterConst.m in Sources */,
 				498143DC1D33713500FF6A83 /* main.m in Sources */,

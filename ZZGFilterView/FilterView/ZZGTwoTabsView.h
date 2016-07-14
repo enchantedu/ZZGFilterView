@@ -10,4 +10,7 @@
 
 @interface ZZGTwoTabsView : UIView
 
+- (instancetype)initWithMainCategories:(NSArray *)mainCategories subCategories:(NSArray *)subCategories;
+
+
 @end

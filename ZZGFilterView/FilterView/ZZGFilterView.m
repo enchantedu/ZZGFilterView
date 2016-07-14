@@ -27,11 +27,11 @@
 
 #pragma mark - Public Methods
 - (void)refreshUI {
-    ZZGCategoryBtnView *categoryBtnView = [[ZZGCategoryBtnView alloc] initWithInfos:_categoryBtnInfos];
-    [self addSubview:categoryBtnView];
+    _categoryBtnView = [[ZZGCategoryBtnView alloc] initWithInfos:_categoryBtnInfos];
+    [self addSubview:_categoryBtnView];
     
-    [categoryBtnView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(categoryBtnView.superview);
+    [_categoryBtnView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(_categoryBtnView.superview);
     }];
 }
 
@@ -40,10 +40,11 @@
 }
 
 - (void)hideInSuperview {
-    
+    [_categoryBtnView hideBackgroundView];
 }
 
 - (void)hideBackgroundView {
+    [_categoryBtnView hideBackgroundView];
 }
 
 #pragma mark - Action
@@ -51,7 +52,6 @@
     UITableView *tableView = noti.userInfo[kMainTableViewKey];
     NSIndexPath *indexPath = noti.userInfo[kMainTableViewIndexPathKey];
     NSArray *mainCategories = noti.userInfo[kMainCategories];
-    
     if (self.delegate && [self.delegate respondsToSelector:@selector(filterView:mainTableView:didSelectAtIndexPath:)]) {
         [self.delegate filterView:self mainTableView:tableView didSelectAtIndexPath:indexPath];
         
@@ -78,27 +78,10 @@
     
 }
 
-
-
-
-
 - (void)setDelegate:(id<ZZGFilterViewDelegate>)delegate {
+    _delegate = delegate;
     _categoryBtnInfos = [delegate infosForCategoryBtnItems];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @end

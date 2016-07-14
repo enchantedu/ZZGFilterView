@@ -23,9 +23,29 @@
     return self;
 }
 
+- (void)setTitle:(NSString *)title forState:(UIControlState)state {
+    [super setTitle:title forState:state];
+    [self sizeToFit];
+}
+
+- (void)setImage:(UIImage *)image forState:(UIControlState)state {
+    [super setImage:image forState:state];
+    [self sizeToFit];
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    CGFloat padding = 2;
+    CGFloat horizontalMargin = (self.frame.size.width - (self.titleLabel.frame.size.width + self.imageView.frame.size.width + padding)) / 2;
+    
+    CGRect titleLabelF = self.titleLabel.frame;
+    titleLabelF.origin.x = horizontalMargin;
+    self.titleLabel.frame = titleLabelF;
+    
+    CGRect imageViewF = self.imageView.frame;
+    imageViewF.origin.x = CGRectGetMaxX(self.titleLabel.frame) + padding;
+    self.imageView.frame = imageViewF;
 }
 
 @end

@@ -24,6 +24,7 @@
     self = [super init];
     if (self) {
         _allSubCategories = categories;
+        _aSubCategories = _aSubCategories[0];
         [self setupViews];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableView:) name:kMainTableViewDidSelectRow object:nil];
@@ -44,7 +45,7 @@
 
 #pragma mark - UITableViewDataSoure
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _allSubCategories.count;
+    return _aSubCategories.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -58,6 +59,8 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     dict[kSubTableViewIndexPathKey] = indexPath;
     dict[kSubTableViewKey] = tableView;
@@ -66,7 +69,7 @@
 
 #pragma mark - Action
 - (void)reloadTableView:(NSNotification *)noti {
-    NSIndexPath *indexPath = noti.userInfo[kMainTableViewDidSelectRow];
+    NSIndexPath *indexPath = noti.userInfo[kMainTableViewIndexPathKey];
     _aSubCategories = _allSubCategories[indexPath.row];
     [_tableView reloadData];
 }
@@ -74,32 +77,6 @@
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -10,6 +10,7 @@
 #import "Masonry.h"
 #import "ZZGMainCategoryView.h"
 #import "ZZGFilterConst.h"
+#import "ZZGTwoTabsView.h"
 
 @implementation ZZGFilterBackgroundView
 
@@ -18,7 +19,7 @@
     if (self) {
          self.backgroundColor = [UIColor colorWithRed:(150 / 255.0) green:(150 / 255.0) blue:(150 / 255.0) alpha:1.0];
         if (mainCategories && subCategories) {
-            
+            [self setupViewsWithMainCategories:mainCategories subCategories:subCategories];
         } else if (mainCategories && subCategories == nil) {
             [self setupViewsWithMainCategories:mainCategories];
         } else if (mainCategories == nil && subCategories) {
@@ -29,7 +30,13 @@
 }
 
 - (void)setupViewsWithMainCategories:(NSArray *)mainCategories subCategories:(NSArray *)subCategories {
+    ZZGTwoTabsView *twoTabsView = [[ZZGTwoTabsView alloc] initWithMainCategories:mainCategories subCategories:subCategories];
+    [self addSubview:twoTabsView];
     
+    [twoTabsView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.equalTo(twoTabsView.superview);
+        make.height.mas_equalTo([UIScreen mainScreen].bounds.size.height * 0.6);
+    }];
 }
 
 -(void)setupViewsWithMainCategories:(NSArray *)mainCategories {
@@ -74,21 +81,6 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kWideOptionViewDidHideInKeyWindow object:nil];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

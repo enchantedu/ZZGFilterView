@@ -14,4 +14,6 @@
 
 - (instancetype)initWithInfos:(NSArray *) infos;
 
+- (void)hideBackgroundView;
+
 @end

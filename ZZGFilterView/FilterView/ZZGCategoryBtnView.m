@@ -51,14 +51,14 @@
             NSDictionary *secondDict = infos[1];
             
             ZZGFilterButton *firstButton = [self addButtonWith:firstDict normalImageName:@"down_arrow" selectedImageName:@"up_arrow"];
-            ZZGFilterButton *secondButton = [self addButtonWith:secondDict normalImageName:@"up_arrow" selectedImageName:@"up_arrow"];
+            ZZGFilterButton *secondButton = [self addButtonWith:secondDict normalImageName:@"down_arrow" selectedImageName:@"up_arrow"];
             UIView *verticalLine = [[UIView alloc] init];
             verticalLine.backgroundColor = [UIColor redColor];
             [self addSubview:verticalLine];
             
             
             [firstButton mas_makeConstraints:^(MASConstraintMaker *make){
-                make.top.bottom.equalTo(firstButton.superview);
+                make.top.bottom.left.equalTo(firstButton.superview);
                 make.width.equalTo(secondButton);
             }];
             
@@ -70,7 +70,8 @@
             }];
             
             [secondButton mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.bottom.equalTo(secondButton.superview);
+                make.left.equalTo(verticalLine.mas_right);
+                make.top.bottom.right.equalTo(secondButton.superview);
             }];
             
         }
@@ -94,8 +95,8 @@
             [self addSubview:secondVerticalLine];
             
             [firstButton mas_makeConstraints:^(MASConstraintMaker *make){
-                make.top.bottom.equalTo(firstButton.superview);
-                make.width.equalTo(@[secondButton, thirdButton]);
+                make.top.bottom.left.equalTo(firstButton.superview);
+                make.width.equalTo(secondButton);
             }];
             
             [firstVerticalLine mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -108,6 +109,7 @@
             [secondButton mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.top.bottom.equalTo(secondButton.superview);
                 make.left.equalTo(firstVerticalLine.mas_right);
+                make.width.equalTo(thirdButton);
             }];
             
             [secondVerticalLine mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -118,7 +120,7 @@
             }];
             
             [thirdButton mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.bottom.equalTo(thirdButton.superview);
+                make.top.bottom.right.equalTo(thirdButton.superview);
                 make.left.equalTo(secondVerticalLine.mas_right);
             }];
             
@@ -147,6 +149,7 @@
     if (_currentButton != button) {
         _currentButton.selected = NO;
         _currentButton = button;
+        [_currentBackgroundView hideInKeyWindow];
     }
     
     button.selected = !button.selected;
@@ -187,38 +190,13 @@
 
 #pragma mark - Public Methods
 - (void)hideBackgroundView {
-    
+    [_currentBackgroundView hideInKeyWindow];
+    _currentButton.selected = NO;
 }
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

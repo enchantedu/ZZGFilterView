@@ -54,6 +54,8 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     dict[kMainTableViewIndexPathKey] = indexPath;
     dict[kMainTableViewKey] = tableView;
