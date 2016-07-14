@@ -16,7 +16,6 @@
 @end
 
 @implementation ViewController {
-//    UIView *_backgroundView;
     ZZGFilterView *_filterView;
     UITableView *_tableView;
     
@@ -35,17 +34,9 @@
 - (void)loadView {
     [super loadView];
     
-
- 
-    
-//    _backgroundView = [[UIView alloc] init];
-//    _backgroundView.backgroundColor = [UIColor lightGrayColor];
-//    [self.view addSubview:_backgroundView];
-//    
     _filterView = [[ZZGFilterView alloc] init];
     _filterView.delegate = self;
     _filterView.backgroundColor = [UIColor greenColor];
-//    [self.view addSubview:_filterView];
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     _tableView.delegate = self;
@@ -56,17 +47,6 @@
 }
 
 - (void)updateViewConstraints {
-//    [_backgroundView mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.top.left.right.equalTo(self.view);
-//        make.height.mas_equalTo(100);
-//    }];
-//    
-//    [_filterView mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.view).offset(100);
-//        make.left.right.equalTo(self.view);
-//        make.height.mas_offset(60);
-//    }];
-    
     [_tableView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(64, 0, 0, 0));
     }];

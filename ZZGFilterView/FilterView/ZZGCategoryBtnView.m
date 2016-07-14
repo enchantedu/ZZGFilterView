@@ -30,7 +30,7 @@
 }
 
 - (void)setupViewsWithInfos:(NSArray *)infos {
-    if (infos.count == 0 || infos.count > 4)
+    if (infos.count == 0 || infos.count > 3)
         return;
     
     NSUInteger count = infos.count;
@@ -123,11 +123,6 @@
                 make.top.bottom.right.equalTo(thirdButton.superview);
                 make.left.equalTo(secondVerticalLine.mas_right);
             }];
-            
-        }
-            break;
-            
-        case 4: {
             
         }
             break;
